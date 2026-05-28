@@ -29,22 +29,22 @@ Construire une **API de gestion de livres** avec XyPriss qui met en pratique :
 
 Le client appelle `GET /books`. Le comportement change selon la présence ou l'absence de queries :
 
-| Requête | Comportement |
-|---|---|
-| `GET /books` | Retourne tous les livres |
-| `GET /books?type=romans` | Filtre par type |
-| `GET /books?type=romans&page=2` | Filtre + pagination |
-| Query invalide | Erreur `400 Bad Request` |
-| Session bloquée | Erreur `401 Unauthorized` |
+| Requête                         | Comportement              |
+| ------------------------------- | ------------------------- |
+| `GET /books`                    | Retourne tous les livres  |
+| `GET /books?type=romans`        | Filtre par type           |
+| `GET /books?type=romans&page=2` | Filtre + pagination       |
+| Query invalide                  | Erreur `400 Bad Request`  |
+| Session bloquée                 | Erreur `401 Unauthorized` |
 
 ---
 
 ## Queries supportées
 
-| Paramètre | Type | Valeurs acceptées | Défaut |
-|---|---|---|---|
-| `type` | `string` | `romans` \| `all` | `all` |
-| `page` | `number` | Entier positif ≥ 1 | `1` |
+| Paramètre | Type     | Valeurs acceptées  | Défaut |
+| --------- | -------- | ------------------ | ------ |
+| `type`    | `string` | `romans` \| `all`  | `all`  |
+| `page`    | `number` | Entier positif ≥ 1 | `1`    |
 
 ---
 
@@ -115,5 +115,5 @@ books-api/
 3. **Tracer** la variable `ATTEMPT` dans les logs à chaque requête pour visualiser XESS en action
 4. **Insister** sur le fait que `process.env.ATTEMPT` retournerait `undefined` (masqué par le Shield) — seul `__sys__.__env__.get()` fonctionne
 
+> [!CAUTION]
 > ⚠️ **Avertissement pédagogique :** Stocker un compteur de tentatives dans une variable d'environnement runtime est une approche **éducative uniquement**. En production, ce genre de logique doit être géré avec XEMS (sessions chiffrées) ou une base de données dédiée. L'objectif ici est uniquement de comprendre le fonctionnement de XESS.
-
