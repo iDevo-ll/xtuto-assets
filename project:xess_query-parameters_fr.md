@@ -52,7 +52,7 @@ Le client appelle `GET /books`. Le comportement change selon la présence ou l'a
 
 - `type` doit être exactement `"romans"` ou `"all"` — toute autre valeur → `400`
 - `page` doit être un entier positif — une chaîne, un flottant, un négatif → `400`
-- Tout query parameter **non reconnu** est ignoré silencieusement (pas d'erreur)
+- Si erreurs de validations, on renvoie un "bad_request".
 
 ---
 
