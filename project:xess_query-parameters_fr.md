@@ -87,25 +87,6 @@ const attempts = __sys__.__env__.get("ATTEMPT") ?? "0";
 // Incrémenter et sauvegarder
 __sys__.__env__.set("ATTEMPT", String(Number(attempts) + 1));
 ```
-
----
-
-## Structure du projet
-
-```
-books-api/
-├── src/
-│   ├── index.ts           # Point d'entrée, création du serveur
-│   ├── routes/
-│   │   └── books.route.ts # Route GET /books
-│   ├── middlewares/
-│   │   └── xess.guard.ts  # Middleware de blocage XESS
-│   └── data/
-│       └── books.ts       # Données mockées
-├── .env
-└── xypriss.config.jsonc
-```
-
 ---
 
 ## Points pédagogiques clés pour la vidéo
